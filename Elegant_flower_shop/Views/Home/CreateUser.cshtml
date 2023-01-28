@@ -1,0 +1,72 @@
+﻿@model List<Elegant_flower_shop.Models.Customer>
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+<link rel="stylesheet" href="~/Content/StyleSheet3.css">
+<div class="signup__container">
+    <div class="container__child signup__thumbnail">
+        <div class="thumbnail__logo">
+
+        </div>
+        <div class="thumbnail__content text-center">
+            <h1 class="heading--primary">Welcome to Elegant Flower Shop</h1>
+            <h2 class="heading--secondary">Are you ready to experience the elite?</h2>
+        </div>
+        <div class="thumbnail__links">
+            <ul class="list-inline m-b-0 text-center">
+                <li><a href="http://alexdevero.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
+                <li><a href="https://www.behance.net/alexdevero" target="_blank"><fa class="fa fa-behance"></fa></a></li>
+                <li><a href="https://github.com/alexdevero" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://twitter.com/alexdevero" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div>
+        <div class="signup__overlay"></div>
+    </div>
+    <div class="container__child signup__form">
+        <form action="/Home/CreateUser" method="post">
+            <div class="form-group">
+                <label for="username">customer Name</label>
+                <input class="form-control" type="text" name="customerName" placeholder="user name" />
+                @Html.ValidationMessage("customerName", "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                <label for="email">Phone</label>
+                <input class="form-control" type="text" name="customerPhone" placeholder="xyz@gmail.com" />
+                @Html.ValidationMessage("customerPhone", "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group">
+                <label for="password">Email</label>
+                <input class="form-control" type="password" name="customerEmail" placeholder="********" />
+                @Html.ValidationMessage("customerEmail", "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" name="customerPassword" placeholder="********" />
+                @Html.ValidationMessage("customerPassword", "", new { @class = "text-danger" })
+            </div>
+
+
+            <div class="m-t-lg">
+                <ul class="list-inline">
+                    <li>
+                        <input class="btn btn--form" type="submit" value="Register" />
+                    </li>
+                    <li>
+                        <a class="signup__link" href="#">I am already a member</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-danger">
+                @Html.ValidationSummary()
+            </div>
+        </form>
+    </div>
+</div>
+
+

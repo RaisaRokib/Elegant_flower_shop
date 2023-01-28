@@ -1,0 +1,32 @@
+﻿@model List<Elegant_flower_shop.Models.Customer>
+@{
+    ViewBag.Title = "LoginPage";
+}
+
+<link rel="stylesheet" href="~/Content/StyleSheet2.css">
+
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+    <div>Elegant<span>FlowerShop</span></div>
+</div>
+<br>
+<div class="login">
+    <form action="/Home/LoginPage" method="post">
+        <input type="text" name="customerName" placeholder="username"><br>
+        @Html.ValidationMessage("customerName", "", new { @class = "text-danger" })
+        <input type="password" name="customerPassword" placeholder="password"><br>
+        @Html.ValidationMessage("customerPassword", "", new { @class = "text-danger" })
+        <input type="submit" value="Login">
+        <div class="text-danger">
+            @Html.ValidationSummary()
+        </div>
+    </form>
+    <form action="/Home/CreateUser">
+        <div class="signup_container">
+            <div class="signup-text">Not a member yet?</div>
+            <button class="btn signup_btn">Signup</button>
+        </div>
+    </form>
+   
+</div>

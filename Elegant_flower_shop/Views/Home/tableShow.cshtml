@@ -1,0 +1,26 @@
+﻿@model List<Elegant_flower_shop.Models.Customer>
+@{
+    ViewBag.Title = "tableShow";
+}
+
+<table>
+    <tr>
+        <th> Name </th>
+        <th> Email </th>
+        <th> Phone </th>
+        <th> Password </th>
+        <th> Admin Id </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+<tr>
+    <th> @item.customerName </th>
+    <th> @item.customerEmail </th>
+    <th> @item.customerPhone </th>
+
+    <th> @item.customerPassword </th>
+    <th> @item.customer_id </th>
+</tr>
+    }
+</table>
